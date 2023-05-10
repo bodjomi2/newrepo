@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/roleDefinitions",
+      "name": "2ceb15c9-1e63-5363-ba7c-3d3e8c63f615",
+      "apiVersion": "2022-05-01-preview",
+      "properties": {
+        "assignableScopes": [
+          "/providers/Microsoft.Management/managementGroups/0639377f-e"
+        ],
+        "description": "Delegated role for subscription owner generated from subscription Owner role",
+        "permissions": [
+          {
+            "actions": [
+              "*"
+            ],
+            "dataActions": [],
+            "notActions": [
+              "Microsoft.Authorization/*/write",
+              "Microsoft.Network/vpnGateways/*",
+              "Microsoft.Network/expressRouteCircuits/*",
+              "Microsoft.Network/routeTables/write",
+              "Microsoft.Network/vpnSites/*"
+            ],
+            "notDataActions": []
+          }
+        ],
+        "roleName": "[0639377f-e] Subscription-Owner",
+        "type": "CustomRole"
+      }
+    }
+  ],
+  "outputs": {}
+}

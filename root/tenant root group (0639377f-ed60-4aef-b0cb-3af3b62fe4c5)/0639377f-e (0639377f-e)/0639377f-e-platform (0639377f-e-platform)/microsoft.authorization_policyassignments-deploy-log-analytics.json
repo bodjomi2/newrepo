@@ -1,0 +1,59 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Deploy-Log-Analytics",
+      "kind": "policyassignments",
+      "apiVersion": "2022-06-01",
+      "location": "westeurope",
+      "identity": {
+        "principalId": "114328e8-bcbc-4a00-b702-fa0b49b35137",
+        "tenantId": "0639377f-ed60-4aef-b0cb-3af3b62fe4c5",
+        "type": "SystemAssigned"
+      },
+      "properties": {
+        "description": "Deploy resource group containing Log Analytics workspace and linked automation account to centralize logs and monitoring. The automation account is aprerequisite for solutions like Updates and Change Tracking.",
+        "displayName": "Configure Log Analytics workspace and automation account to centralize logs and monitoring",
+        "enforcementMode": "Default",
+        "metadata": {},
+        "nonComplianceMessages": [
+          {
+            "message": "Log Analytics workspace and automation account must be configured to centralize logs and monitoring."
+          }
+        ],
+        "parameters": {
+          "automationAccountName": {
+            "value": "0639377f-e-aauto"
+          },
+          "automationRegion": {
+            "value": "westeurope"
+          },
+          "dataRetention": {
+            "value": "30"
+          },
+          "rgName": {
+            "value": "0639377f-e-mgmt"
+          },
+          "workspaceName": {
+            "value": "0639377f-e-law"
+          },
+          "workspaceRegion": {
+            "value": "westeurope"
+          }
+        },
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/8e3e61b3-0b32-22d5-4edf-55f87fdb5955",
+        "scope": "/providers/Microsoft.Management/managementGroups/0639377f-e-platform"
+      }
+    }
+  ],
+  "outputs": {}
+}
