@@ -16,14 +16,11 @@ variables:
   # Files listed in the .order file will be deployed before other files and in the 
   # order they are listed.
   #
-  # - ARM_TENANT_ID
-  # - ARM_SUBSCRIPTION_ID
-  # - ARM_CLIENT_ID
-  # - ARM_CLIENT_SECRET
-  # - ARM_ENVIRONMENT
-  # - AZOPS_MODULE_VERSION   
-  # - AZOPS_CUSTOM_SORT_ORDER 
-  #
+  - ARM_TENANT_ID: '0639377f-ed60-4aef-b0cb-3af3b62fe4c5'
+  - ARM_SUBSCRIPTION_ID: 'cf0a66fe-f204-44bc-98d8-6810cd5a1814'
+  - ARM_CLIENT_ID: '3e6cb80f-da47-47e4-a38d-6f8573f13196'
+  - ARM_CLIENT_SECRET: 'f0b6606f-2431-465a-aefd-647b8afda864'
+ 
 
   - group: credentials
   - group: azops
