@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/roleDefinitions",
+      "name": "3b6955e7-2ba7-5858-90a4-9bb9cd4d6bdb",
+      "apiVersion": "2022-05-01-preview",
+      "properties": {
+        "assignableScopes": [
+          "/providers/Microsoft.Management/managementGroups/0639377f-e"
+        ],
+        "description": "Contributor role granted for application/operations team at resource group level",
+        "permissions": [
+          {
+            "actions": [
+              "*"
+            ],
+            "dataActions": [],
+            "notActions": [
+              "Microsoft.Authorization/*/write",
+              "Microsoft.Network/publicIPAddresses/write",
+              "Microsoft.Network/virtualNetworks/write",
+              "Microsoft.KeyVault/locations/deletedVaults/purge/action"
+            ],
+            "notDataActions": []
+          }
+        ],
+        "roleName": "[0639377f-e] Application-Owners",
+        "type": "CustomRole"
+      }
+    }
+  ],
+  "outputs": {}
+}

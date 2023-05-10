@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Management/managementGroups",
+      "name": "0639377f-e-platform",
+      "apiVersion": "2021-04-01",
+      "scope": "/",
+      "properties": {
+        "displayName": "0639377f-e-platform",
+        "details": {
+          "parent": {
+            "id": "/providers/Microsoft.Management/managementGroups/0639377f-e"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "AzOps-microsoft.management_managementgroups-nested",
+      "location": "[deployment().location]",
+      "properties": {
+        "mode": "Incremental",
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "resources": [
+            {
+              "type": "Microsoft.Management/managementGroups/subscriptions",
+              "apiVersion": "2021-04-01",
+              "name": "0639377f-e-platform/cf0a66fe-f204-44bc-98d8-6810cd5a1814",
+              "scope": "/"
+            }
+          ],
+          "outputs": {}
+        }
+      },
+      "dependsOn": [
+        "Microsoft.Management/managementGroups/0639377f-e-platform"
+      ]
+    }
+  ],
+  "outputs": {}
+}
