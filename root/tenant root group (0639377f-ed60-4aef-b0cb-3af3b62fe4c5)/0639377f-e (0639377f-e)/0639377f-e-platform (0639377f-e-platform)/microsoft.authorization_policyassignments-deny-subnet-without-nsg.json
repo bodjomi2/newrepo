@@ -19,13 +19,28 @@
         "description": "This policy denies the creation of a subnet without a Network Security Group to protect traffic across subnets.",
         "displayName": "Subnets should have a Network Security Group",
         "enforcementMode": "Default",
-        "metadata": {},
+        "metadata": {
+          "parameterScopes": {}
+        },
         "nonComplianceMessages": [
           {
             "message": "Subnets must have a Network Security Group."
           }
         ],
+        "notScopes": [],
+        "overrides": [],
+        "parameters": {
+          "excludedSubnets": {
+            "value": [
+              "GatewaySubnet",
+              "AzureFirewallSubnet",
+              "AzureFirewallManagementSubnet",
+              "AzureBastionSubnet"
+            ]
+          }
+        },
         "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/0639377f-e/providers/Microsoft.Authorization/policyDefinitions/Deny-Subnet-Without-Nsg",
+        "resourceSelectors": [],
         "scope": "/providers/Microsoft.Management/managementGroups/0639377f-e-platform"
       }
     }
