@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "508a7ec127c3433da7ba9eb9",
+      "kind": "policyassignments",
+      "apiVersion": "2022-06-01",
+      "location": "eastus",
+      "identity": {
+        "principalId": "a2a9fd9b-3565-4e71-8c99-8a2571d64bdc",
+        "tenantId": "0639377f-ed60-4aef-b0cb-3af3b62fe4c5",
+        "type": "SystemAssigned"
+      },
+      "properties": {
+        "displayName": "NewPolicyTaks3",
+        "enforcementMode": "Default",
+        "metadata": {
+          "parameterScopes": {}
+        },
+        "nonComplianceMessages": [],
+        "notScopes": [],
+        "overrides": [],
+        "parameters": {},
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/0639377f-e/providers/Microsoft.Authorization/policyDefinitions/57296f61-aa4a-44e8-a6b4-f87940bf7744",
+        "resourceSelectors": [],
+        "scope": "/subscriptions/cf0a66fe-f204-44bc-98d8-6810cd5a1814"
+      }
+    }
+  ],
+  "outputs": {}
+}
