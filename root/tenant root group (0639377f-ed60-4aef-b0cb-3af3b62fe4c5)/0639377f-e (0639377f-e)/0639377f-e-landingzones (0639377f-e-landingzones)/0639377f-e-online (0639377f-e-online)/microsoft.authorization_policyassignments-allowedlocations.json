@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "AllowedLocations",
+      "kind": "policyassignments",
+      "apiVersion": "2022-06-01",
+      "location": "northeurope",
+      "identity": {
+        "principalId": "bb9ae4c6-fa07-4317-849f-54335f0560b2",
+        "tenantId": "0639377f-ed60-4aef-b0cb-3af3b62fe4c5",
+        "type": "SystemAssigned"
+      },
+      "properties": {
+        "description": "Policy to ringfence Azure regions.",
+        "displayName": "Policy to ringfence Azure regions.",
+        "enforcementMode": "DoNotEnforce",
+        "metadata": {},
+        "parameters": {
+          "listOfAllowedLocations": {
+            "value": [
+              "westeurope",
+              "northeurope"
+            ]
+          }
+        },
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c",
+        "scope": "/providers/Microsoft.Management/managementGroups/0639377f-e-online"
+      }
+    }
+  ],
+  "outputs": {}
+}
