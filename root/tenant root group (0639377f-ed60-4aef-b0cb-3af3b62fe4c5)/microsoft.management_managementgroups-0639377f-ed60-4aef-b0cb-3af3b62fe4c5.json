@@ -12,7 +12,7 @@
     {
       "type": "Microsoft.Management/managementGroups",
       "name": "0639377f-ed60-4aef-b0cb-3af3b62fe4c5",
-      "apiVersion": "2021-04-01",
+      "apiVersion": "2023-04-01",
       "scope": "/",
       "properties": {
         "displayName": "Tenant Root Group",
